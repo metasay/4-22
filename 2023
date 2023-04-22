@@ -1,0 +1,125 @@
+# jumsiuu = [0, 0]
+# egin = [0, 0]
+# win = []
+# n = int(input())
+# list = [input().split() for _ in range(n)]
+# teams = [int(x[0]) for x in list]
+# time = [x[1].split(":") for x in list]
+# for i in range(len(time)):
+#     time[i] = int(time[i][0]) * 60 + int(time[i][1])
+# time.append(48 * 60)
+# for team in teams:
+#     if team == 1:
+#         jumsiuu[0] += 1
+#     else:
+#         jumsiuu[1] += 1
+#     if jumsiuu[0] > jumsiuu[1]:
+#         win.append("team1")
+#     elif jumsiuu[0] < jumsiuu[1]:
+#         win.append("team2")
+#     else:
+#         win.append("draw")
+#
+# for i, item in enumerate(win):
+#     if item == "team1":
+#         egin[0] += time[i + 1] - time[i]
+#     if item == "team2":
+#         egin[1] += time[i + 1] - time[i]
+#
+# egin_a = [str(egin[0] // 60), str(egin[0] % 60)]
+# egin_b = [str(egin[1] // 60), str(egin[1] % 60)]
+# for i in range(2):
+#     if len(egin_a[i]) == 1:
+#         egin_a[i] = "0" + egin_a[i]
+#
+#     if len(egin_b[i]) == 1:
+#         egin_b[i] = "0" + egin_b[i]
+#
+# print(egin_a[0] + ":" + egin_a[1])
+# print(egin_b[0] + ":" + egin_b[1])
+# dir = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+#
+# t = int(input())
+#
+# for _ in range(t):
+#     s = input()
+#
+#     r, c, d, rmax, rmin, cmax, cmin = 0, 0, 0, 0, 0, 0, 0
+#
+#     for i in s:
+#         if i == 'F':
+#             r += dir[d][0]
+#             c += dir[d][1]
+#         elif i == 'B':
+#             r -= dir[d][0]
+#             c -= dir[d][1]
+#         elif i == 'L':
+#             d = (d + 1) % 4
+#         elif i == 'R':
+#             d = 3 if d - 1 < 0 else d - 1
+#
+#         rmax = max(rmax, r)
+#         rmin = min(rmin, r)
+#         cmax = max(cmax, c)
+#         cmin = min(cmin, c)
+#
+#     print((rmax - rmin) * (cmax - cmin))
+#
+#
+# import turtle as t
+#
+#
+# def fclick(x, y):
+#     t.fillcolor("red")
+#
+#
+# def frelease(x, y):
+#     t.fillcolor("skyblue")
+#
+#
+# def fup():
+#     t.forward(30)
+#
+#
+# def fdown():
+#     t.back(30)
+#
+#
+# def fleft():
+#     t.left(15)
+#
+#
+# def fright():
+#     t.right(15)
+#
+#
+# def main():
+#     t.bgcolor("wheat")
+#     t.pensize(90)
+#     t.speed(0)
+#     t.shapesize(1)
+#     t.shape("turtle")
+#     t.color("black", "skyblue")
+#
+#     t.onscreenclick(t.goto)
+#     t.ondrag(t.goto)
+#     t.onclick(fclick)
+#     t.onrelease(frelease)
+#     t.onkey(fup, "Up")
+#     t.onkey(fdown, "Down")
+#     t.onkey(fleft, "Left")
+#     t.onkey(fright, "Right")
+#     t.listen()
+#     return
+#
+#
+# if __name__ == "__main__":
+#     main()
+#     t.mainloop()
+# n, kim, im = map(int, input().split())
+# count = 0
+# while kim != im:
+#     kim -= kim // 2
+#     im -= im // 2
+#     count += 1
+# print(count)
